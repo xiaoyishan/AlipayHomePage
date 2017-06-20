@@ -17,7 +17,7 @@
     [super viewDidLoad];
 
     UILabel * titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kWidth, 64)];
-    titleLabel.text = @"支付宝首页效果demo";
+    titleLabel.text = @"支付宝首页";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor=BasicBlue;
     [self.view addSubview:titleLabel];
@@ -51,7 +51,7 @@
     [rootView addSubview:Table];
 
     //根据你的cell情况 自己计算第一次出来时table的高度 (待解决)
-    Table.mj_h=44*10-64;
+    Table.mj_h=44*10-64-104;
 
     //模拟首次刷新
     [Table startRefreshing];
