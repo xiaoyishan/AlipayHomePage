@@ -26,7 +26,7 @@
 -(void)setContentOffsetY:(CGFloat)contentOffsetY {
     _contentOffsetY = contentOffsetY;
     if ([self.mj_header isRefreshing]) {
-        [self setContentOffset:CGPointMake(0, -54) animated:NO];
+        [self setContentOffset:CGPointMake(0, -MJRefreshHeaderHeight) animated:NO];
     }else{
         self.mj_offsetY=_contentOffsetY;
     }
@@ -55,7 +55,7 @@
         [self reloadData];
 
         //位置
-        scroller.contentSize=CGSizeMake(0, self.contentSize.height+303-64);
+        scroller.contentSize=CGSizeMake(0, self.contentSize.height+RootView_h);
         self.mj_h=self.contentSize.height;
 
         [self.mj_header endRefreshing];

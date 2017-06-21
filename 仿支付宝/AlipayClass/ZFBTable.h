@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MJRefresh.h>
+#import "ZFBConst.h"
 
 
 #define kWidth [UIScreen mainScreen].bounds.size.width

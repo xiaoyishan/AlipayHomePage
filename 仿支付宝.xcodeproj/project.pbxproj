@@ -13,7 +13,8 @@
 		210E535C1EF7CBFF004D0EC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210E535A1EF7CBFF004D0EC9 /* Main.storyboard */; };
 		210E535E1EF7CBFF004D0EC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210E535D1EF7CBFF004D0EC9 /* Assets.xcassets */; };
 		210E53611EF7CBFF004D0EC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210E535F1EF7CBFF004D0EC9 /* LaunchScreen.storyboard */; };
-		210E536A1EF7CC98004D0EC9 /* ZFBTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 210E53691EF7CC98004D0EC9 /* ZFBTable.m */; };
+		2168CF861EFA575B00116D86 /* ZFBScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 2168CF831EFA575B00116D86 /* ZFBScroll.m */; };
+		2168CF871EFA575B00116D86 /* ZFBTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2168CF851EFA575B00116D86 /* ZFBTable.m */; };
 		A9D670928376849CF812DD3F /* libPods-仿支付宝.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ADFD4C9AB6C5BCA4A7788A /* libPods-仿支付宝.a */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +29,11 @@
 		210E535D1EF7CBFF004D0EC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		210E53601EF7CBFF004D0EC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		210E53621EF7CBFF004D0EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		210E53681EF7CC98004D0EC9 /* ZFBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBTable.h; sourceTree = "<group>"; };
-		210E53691EF7CC98004D0EC9 /* ZFBTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBTable.m; sourceTree = "<group>"; };
+		2168CF811EFA575B00116D86 /* ZFBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBConst.h; sourceTree = "<group>"; };
+		2168CF821EFA575B00116D86 /* ZFBScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBScroll.h; sourceTree = "<group>"; };
+		2168CF831EFA575B00116D86 /* ZFBScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBScroll.m; sourceTree = "<group>"; };
+		2168CF841EFA575B00116D86 /* ZFBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBTable.h; sourceTree = "<group>"; };
+		2168CF851EFA575B00116D86 /* ZFBTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBTable.m; sourceTree = "<group>"; };
 		C801D82DFED9FD39F449D3D2 /* Pods-仿支付宝.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-仿支付宝.debug.xcconfig"; path = "Pods/Target Support Files/Pods-仿支付宝/Pods-仿支付宝.debug.xcconfig"; sourceTree = "<group>"; };
 		D8C17FB87139F7545A56FE28 /* Pods-仿支付宝.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-仿支付宝.release.xcconfig"; path = "Pods/Target Support Files/Pods-仿支付宝/Pods-仿支付宝.release.xcconfig"; sourceTree = "<group>"; };
 		F3ADFD4C9AB6C5BCA4A7788A /* libPods-仿支付宝.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-仿支付宝.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,8 +72,7 @@
 		210E53501EF7CBFF004D0EC9 /* 仿支付宝 */ = {
 			isa = PBXGroup;
 			children = (
-				210E53681EF7CC98004D0EC9 /* ZFBTable.h */,
-				210E53691EF7CC98004D0EC9 /* ZFBTable.m */,
+				2168CF801EFA575B00116D86 /* AlipayClass */,
 				210E535A1EF7CBFF004D0EC9 /* Main.storyboard */,
 				210E53571EF7CBFF004D0EC9 /* ViewController.h */,
 				210E53581EF7CBFF004D0EC9 /* ViewController.m */,
@@ -89,6 +92,18 @@
 				210E53521EF7CBFF004D0EC9 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2168CF801EFA575B00116D86 /* AlipayClass */ = {
+			isa = PBXGroup;
+			children = (
+				2168CF811EFA575B00116D86 /* ZFBConst.h */,
+				2168CF821EFA575B00116D86 /* ZFBScroll.h */,
+				2168CF831EFA575B00116D86 /* ZFBScroll.m */,
+				2168CF841EFA575B00116D86 /* ZFBTable.h */,
+				2168CF851EFA575B00116D86 /* ZFBTable.m */,
+			);
+			path = AlipayClass;
 			sourceTree = "<group>";
 		};
 		6A66BFBEC54B0821CB98DDF1 /* Frameworks */ = {
@@ -231,10 +246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2168CF871EFA575B00116D86 /* ZFBTable.m in Sources */,
 				210E53591EF7CBFF004D0EC9 /* ViewController.m in Sources */,
 				210E53561EF7CBFF004D0EC9 /* AppDelegate.m in Sources */,
 				210E53531EF7CBFF004D0EC9 /* main.m in Sources */,
-				210E536A1EF7CC98004D0EC9 /* ZFBTable.m in Sources */,
+				2168CF861EFA575B00116D86 /* ZFBScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
