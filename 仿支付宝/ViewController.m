@@ -32,7 +32,7 @@
     HeardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, RootView_h)];
     [zfbScroll addSubview:HeardView];
 
-    //遮挡层
+    //被遮挡层
     HiddenView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, HiddenView_h)];
     [HeardView addSubview:HiddenView];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:HiddenView.bounds];
