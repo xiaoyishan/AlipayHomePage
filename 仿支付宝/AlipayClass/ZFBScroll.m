@@ -55,6 +55,7 @@
         HiddenView.mj_y=y/2;//视差处理
     }
 }
+
 // 松手时
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     CGFloat y = scrollView.mj_offsetY;
@@ -63,11 +64,13 @@
     }
     [self ScrollToTopOrResume:y];
 }
+
 // 结束时
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CGFloat y = scrollView.mj_offsetY;
     [self ScrollToTopOrResume:y];
 }
+
 -(void)ScrollToTopOrResume:(float)Y{
     if (Y < 0 || Y>HiddenView_h) return;
 

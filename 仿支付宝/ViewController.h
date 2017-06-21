@@ -18,9 +18,9 @@
 
 
 @interface ViewController : UIViewController<UIScrollViewDelegate>{
+    ZFBScroll   *zfbScroll;
     ZFBTable    *Table;
     UIView      *HeardView;
-    ZFBScroll   *zfbScroll;
     UIView      *HiddenView;    //被遮挡的View
 }
 

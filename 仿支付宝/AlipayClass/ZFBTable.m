@@ -45,8 +45,11 @@
     [self MoreDataFromHTTPGet:scroller Parameter:nil];
 }
 
+
+#pragma mark --- 请求网络数据 ---
+
 -(void)MoreDataFromHTTPGet:(UIScrollView*)scroller Parameter:(NSDictionary*)par{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
         for (int k=0; k<10;  k++) {
             [_List addObject:@"arc"];
@@ -89,7 +92,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.001;
 }
--(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"相关动态";
-}
+//-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//    return @"相关动态";
+//}
 @end
