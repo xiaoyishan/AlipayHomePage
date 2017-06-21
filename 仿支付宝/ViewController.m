@@ -31,9 +31,6 @@
     topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 303)];
     [rootView addSubview:topView];
 
-    
-
-
 
 
     imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 104)];
@@ -50,26 +47,15 @@
     Table.scrollEnabled=NO;
     [rootView addSubview:Table];
 
-    //根据你的cell情况 自己计算第一次出来时table的高度 (待解决)
-    Table.mj_h=44*10-64-104;
+    //根据你的cell情况及滑动情况 自己计算第一次出来时table的高度 (待解决) fix1:用首次自动刷新修复
+//    Table.mj_h=44*10-64-104;
 
-    //模拟首次刷新
-    [Table startRefreshing];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [Table endRefreshing];
-    });
+    //模拟首次下拉刷新
+    [Table HeardRefresh:rootView];
 
     //scroller模拟table加载
     rootView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
-            [Table LoadMoreData];
-            rootView.contentSize=CGSizeMake(0, Table.contentSize.height+303-64);
-            Table.mj_h=Table.contentSize.height;
-            [rootView.mj_footer endRefreshing];
-
-            NSLog(@"设置高度:%.0f",Table.contentSize.height);
-        });
+        [Table FootRefresh:rootView];//上拉加载
     }];
     
 }
@@ -96,14 +82,8 @@
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     CGFloat y = scrollView.contentOffset.y;
     if (y < - 54) {
-        [Table startRefreshing];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            rootView.contentSize=CGSizeMake(0, Table.contentSize.height+303-64);
-            Table.mj_h=Table.contentSize.height;
-            [Table endRefreshing];
-        });
+        [Table HeardRefresh:rootView];//下拉刷新
     }
-
     [self ScrollToTopOrResume:scrollView.mj_offsetY];
 }
 // 结束时

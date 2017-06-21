@@ -32,19 +32,35 @@
     }
 }
 
--(void)startRefreshing {
-    [self.mj_header beginRefreshing];
+
+
+-(void)HeardRefresh:(UIScrollView*)scroller{
     _List=[NSMutableArray new];
-    [self LoadMoreData];
+    [self.mj_header beginRefreshing];
+    [self MoreDataFromHTTPGet:scroller Parameter:nil];
 }
--(void)endRefreshing {
-    [self reloadData];
-    [self.mj_header endRefreshing];
+
+-(void)FootRefresh:(UIScrollView*)scroller{
+    [scroller.mj_footer beginRefreshing];
+    [self MoreDataFromHTTPGet:scroller Parameter:nil];
 }
--(void)LoadMoreData{
-    for (int k=0; k<10;  k++) {
-        [_List addObject:@"arc"];
-    }[self reloadData];
+
+-(void)MoreDataFromHTTPGet:(UIScrollView*)scroller Parameter:(NSDictionary*)par{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+        for (int k=0; k<10;  k++) {
+            [_List addObject:@"arc"];
+        }
+        
+        [self reloadData];
+
+        //位置
+        scroller.contentSize=CGSizeMake(0, self.contentSize.height+303-64);
+        self.mj_h=self.contentSize.height;
+
+        [self.mj_header endRefreshing];
+        [scroller.mj_footer endRefreshing];
+    });
 }
 
 

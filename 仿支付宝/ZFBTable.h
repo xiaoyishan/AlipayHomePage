@@ -20,10 +20,8 @@
 @property(assign,nonatomic)CGFloat contentOffsetY;
 @property (nonatomic ,strong) NSMutableArray *List;
 
--(void)startRefreshing;
--(void)endRefreshing;
-
--(void)LoadMoreData;
+-(void)HeardRefresh:(UIScrollView*)scroller;
+-(void)FootRefresh:(UIScrollView*)scroller;
 
 @end
 
