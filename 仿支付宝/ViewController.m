@@ -17,7 +17,7 @@
     [super viewDidLoad];
 
     UILabel * titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kWidth, 64)];
-    titleLabel.text = @"支付宝首页";
+    titleLabel.text = @"模拟支付宝首页";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor=BasicBlue;
     [self.view addSubview:titleLabel];
